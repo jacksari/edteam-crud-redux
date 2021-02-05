@@ -41,7 +41,7 @@ $--clr-white: #fff;
 $--ff-primary: "Open Sans",sans-serif;
 $--ff-secondary: "Raleway",sans-serif;
 $--transition: all 0.3s linear;
-$--spacing: 0.20rem;
+$--spacing: 0.15rem;
 $--radius: 0.5rem;
 $--light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 $--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -266,7 +266,16 @@ Blogs
         padding: 1rem;
         h2{
           margin: 0;
-          font-size: 20px;
+          font-size: .8rem;
+          @media screen and (min-width: 400px) {
+            font-size: 1rem;
+          }
+          @media screen and (min-width: 700px) {
+            font-size: 1.2rem;
+          }
+          @media screen and (min-width: 1000px) {
+            font-size: 1.4rem;
+          }
         }
       }
       .blog-body{
@@ -397,7 +406,7 @@ Blog-page
           }
           .input{
             padding: .5rem 1.2rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
             letter-spacing: $--spacing;
             background: $--clr-primary-10;
             border: none;
@@ -450,28 +459,40 @@ Spinner
 .spinner-loading{
   display: flex;
   justify-content: center;
+  align-items: center;
   span{
     margin-right: 1rem;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
+    color: red;
+    @media screen and (min-width: 600px) {
+      padding: 1rem;
+      font-size: 2rem;
+    }
   }
 }
 .alert-danger{
   span{
     margin-right: 1rem;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
+    @media screen and (min-width: 600px) {
+      font-size: 2rem;
+    }
   }
 }
 .alert-success{
   span{
     margin-right: 1rem;
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     color: green;
+    @media screen and (min-width: 600px) {
+      font-size: 2rem;
+    }
   }
 }
 .request{

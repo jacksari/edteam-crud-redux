@@ -32,8 +32,10 @@ function BlogCard(data) {
       }
     });
   };
-  const { id, title, body } = data.data;
-  // console.log(data);
+  const {
+    id, title, body,
+  } = data.data;
+  // console.log(id);
   return (
     <article className="blog">
       <div className="blog-head">

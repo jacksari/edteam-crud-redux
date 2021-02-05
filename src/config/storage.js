@@ -40,7 +40,6 @@ const enviarLocal = (num, type, status) => {
 };
 // Reinicar localstorage
 const restartLocal = () => {
-  // console.log('restar local');
   const crud = {
     create_s: 0,
     create_e: 0,

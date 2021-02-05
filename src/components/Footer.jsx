@@ -11,16 +11,10 @@ function Footer() {
           </Link>
         </li>
         <li>
-          <Link to="/" className="footer-link scroll-link">about</Link>
+          <Link to="/requests" className="footer-link scroll-link">Request</Link>
         </li>
         <li>
-          <Link to="#services" className="footer-link scroll-link">services</Link>
-        </li>
-        <li>
-          <Link to="/" className="footer-link scroll-link">featured</Link>
-        </li>
-        <li>
-          <Link to="/" className="footer-link scroll-link">gallery</Link>
+          <Link to="new-blog" className="footer-link scroll-link">Crear blog</Link>
         </li>
       </ul>
       <ul className="footer-icons">

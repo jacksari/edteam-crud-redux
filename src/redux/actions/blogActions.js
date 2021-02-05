@@ -25,15 +25,18 @@ const crearNuevoBlogAction = (blog) => async (dispatch) => {
   try {
     // Insertar en la API
     const blogNew = await clienteAxios.post('/posts', blog);
-    console.log('newblog', blogNew);
+
+    blogNew.userId = 11;
+    // console.log('newblog', blogNew.data);
+
     // Si todo va bien, se actualiza el state
     dispatch({
       type: AGREGAR_BLOG_EXITO,
-      payload: blog,
+      payload: blogNew.data,
     });
     enviarLocal(1, 'create', true);
   } catch (e) {
-    console.log('error', e);
+    // console.log('error', e);
     // Si hay un error cambiar el state
     dispatch({
       type: AGREGAR_BLOG_ERROR,
@@ -126,7 +129,7 @@ const obtenerBlogAction = (id) => async (dispatch) => {
     });
     enviarLocal(1, 'read', true);
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     dispatch({
       type: OBTENEER_BLOG_ERROR,
     });
@@ -144,14 +147,14 @@ const updateBlogAction = (blog) => async (dispatch) => {
     type: UPDATE_BLOG,
   });
   try {
-    const res = await clienteAxios.put(`/posts/${blog.id}`);
-    console.log('blog', res);
+    await clienteAxios.put(`/posts/${blog.id}`);
+    // console.log('blog', res);
     dispatch({
       type: UPDATE_BLOG_EXITO,
     });
     enviarLocal(1, 'update', true);
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     dispatch({
       type: UPDATE_BLOG_ERROR,
     });

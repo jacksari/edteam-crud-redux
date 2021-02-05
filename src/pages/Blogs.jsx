@@ -23,13 +23,13 @@ function Blogs() {
         <h2>Listado de Blogs</h2>
         <Notifications
           errorMessage="Upps..., hubo un error al cargar los datos"
-          successMessage="Datos se cargaron satisfactoriamente"
+          successMessage="Los datos se cargaron correctamente"
         />
         <div className="blogs">
           {
-            blogs.map((blog, index) => (
+            blogs.map((blog) => (
               <BlogCard
-                key={index}
+                key={blog.id}
                 data={blog}
               />
             ))

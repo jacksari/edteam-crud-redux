@@ -6,7 +6,7 @@ function Requests() {
   useEffect(() => {
     const res = JSON.parse(localStorage.getItem('crud'));
     setLocal(res);
-    console.log(local);
+    // console.log(local);
   }, []);
 
   const rest = () => {

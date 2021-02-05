@@ -119,6 +119,7 @@ const blogReducers = (state = initialState, action) => {
         error: true,
       };
     case AGREGAR_BLOG_EXITO:
+      // console.log(action.payload);
       return {
         ...state,
         loading: false,

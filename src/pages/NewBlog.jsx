@@ -10,7 +10,7 @@ const NewBlog = () => {
   const history = useHistory();
   // Crear state local
   const [title, setTittle] = useState('');
-  const [description, setDescription] = useState('');
+  const [body, setBody] = useState('');
   // Utilizar dipatch
   const dispatch = useDispatch();
   // console.log(cargando);
@@ -20,7 +20,7 @@ const NewBlog = () => {
   const submitNuevoBlog = (e) => {
     e.preventDefault();
     // Validar formulario
-    if (title.trim() === '' || description.trim() === '') {
+    if (title.trim() === '' || body.trim() === '') {
       return;
     }
 
@@ -29,7 +29,7 @@ const NewBlog = () => {
     // Crear el nuevo blog
     agregarBlog({
       title,
-      description,
+      body,
     });
     setTimeout(() => {
       history.push('/');
@@ -47,7 +47,7 @@ const NewBlog = () => {
             </h2>
             <Notifications
               errorMessage="Upps..., hubo un error al guardar blog"
-              successMessage="Se guardar los datos satisfactoriamete"
+              successMessage="Se guardaron los datos"
             />
           </div>
           <form
@@ -69,14 +69,14 @@ const NewBlog = () => {
 
             </div>
             <div className="form-control">
-              <label htmlFor="description">
+              <label htmlFor="body">
                 <span>Descripción</span>
                 <textarea
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
+                  value={body}
+                  onChange={(e) => setBody(e.target.value)}
                   className="input"
-                  name="description"
-                  id="description"
+                  name="body"
+                  id="body"
                   cols="30"
                   rows="10"
                   placeholder="Ingrese descripción"

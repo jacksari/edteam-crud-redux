@@ -11,7 +11,7 @@ function Notifications({ errorMessage, successMessage }) {
       {
         cargando ? (
           <div className="spinner-loading">
-            <span>cargando...</span>
+            <span>Cargando...</span>
             <Spinner />
           </div>
         ) : null
