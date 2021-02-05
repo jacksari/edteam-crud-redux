@@ -65,7 +65,7 @@ Redux funciona con 3 componentes
 Pienso que nó, se pudo usar Context API de react, ya que con las últimas actualizaciones 
 se hizo más fácil de usarla, pero ¿qué es Context API?; context es una manejador de estados 
 y funciones, se sabe que los componentes de react se comunican por los 'props', pero 
-usando context podemos centralizar los estados y las funciones de nuestra aplicación
+usando context podemos centralizar los estados y las funciones de nuestra aplicación.
 ### Ejemplo
 * Tenemos 4 componentes
 * APP => TIENDA => PRODUCTOS => PRODUCTO
@@ -124,3 +124,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+-----------------------------------------
+⌨️ con ❤️ por [JackSari](https://jacksari.com/) 👋
