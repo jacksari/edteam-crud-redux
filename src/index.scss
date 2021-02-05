@@ -1,0 +1,549 @@
+/*
+===============
+Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;500&display=swap');
+
+/*
+===============
+Variables
+===============
+*/
+
+/* dark shades of primary color*/
+
+$--clr-primary-1: #300913;
+$--clr-primary-2: #601226;
+$--clr-primary-3: #901c38;
+$--clr-primary-4: #c0254b;
+/* primary/main color hsl(185, 62%, 45%)*/
+$--clr-primary-5: #f02e5e;
+/* lighter shades of primary color */
+$--clr-primary-6: #f2436e;
+$--clr-primary-7: #f3587e;
+$--clr-primary-8: #f56d8e;
+$--clr-primary-9: #f897af;
+$--clr-primary-10: #fbc0cf;
+/* darkest grey - used for headings */
+$--clr-grey-1: hsl(209, 61%, 16%);
+$--clr-grey-2: hsl(211, 39%, 23%);
+$--clr-grey-3: hsl(209, 34%, 30%);
+$--clr-grey-4: hsl(209, 28%, 39%);
+/* grey used for paragraphs */
+$--clr-grey-5: hsl(210, 22%, 49%);
+$--clr-grey-6: hsl(209, 23%, 60%);
+$--clr-grey-7: hsl(211, 27%, 70%);
+$--clr-grey-8: hsl(210, 31%, 80%);
+$--clr-grey-9: hsl(212, 33%, 89%);
+$--clr-grey-10: hsl(210, 36%, 96%);
+$--clr-white: #fff;
+$--ff-primary: "Open Sans",sans-serif;
+$--ff-secondary: "Raleway",sans-serif;
+$--transition: all 0.3s linear;
+$--spacing: 0.20rem;
+$--radius: 0.5rem;
+$--light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+$--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+/*
+===============
+Global Styles
+===============
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $--ff-primary;
+  background: $--clr-grey-9;
+  color: $--clr-grey-1;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img:not(.nav-logo) {
+  width: 100%;
+  display: block;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: $--spacing;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: $--clr-grey-5;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+.btn {
+  text-transform: uppercase;
+  background: $--clr-primary-5;
+  color: $--clr-white;
+  padding: 0.20rem;
+  letter-spacing: $--spacing;
+  display: inline-block;
+  /* font-weight: 700; */
+  transition: $--transition;
+  font-size: 0.30rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  @media screen and (min-width: 600px) {
+    font-size: 0.875rem;
+  }
+}
+.btn:hover {
+  color: $--clr-primary-1;
+  background: $--clr-primary-8;
+}
+.section{
+  padding: 5rem 0;
+}
+.section-title{
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-title h2{
+  text-transform: uppercase;
+}
+.section-title span{
+  color: $--clr-primary-5;
+}
+.section-center{
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+  .section-center{
+    width: 95vw;
+  }
+}
+.btn-success{
+  background: green;
+  padding: 0.20rem;
+  &:hover{
+    background: darkseagreen;
+  }
+}
+.btn-danger{
+  font-family: $--ff-primary;
+}
+.btn-blog{
+  font-size: .5rem;
+  @media screen and (min-width: 600px) {
+    font-size: 0.875rem;
+  }
+}
+
+
+
+/*
+===============
+Header
+===============
+*/
+header{
+  padding: 1.2rem 0;
+  background: $--clr-primary-9;
+  @media screen and (min-width: 400px) {
+    padding: 2rem 0;
+  }
+  .section-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+      color: $--clr-white;
+      font-weight: 500;
+      font-size: .6rem;
+      margin: 0;
+      padding: 0;
+      span{
+        color: $--clr-grey-2;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+      }
+      @media screen and (min-width: 400px) {
+        font-size: 1.2rem;
+      }
+      @media screen and (min-width: 700px) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+/*
+===============
+Blogs
+===============
+*/
+.section-blogs{
+  text-align: center;
+  h2{
+    margin: 1.2rem 0;
+    font-size: 1.3rem;
+    @media screen and (min-width: 400px) {
+      margin: 2rem 0;
+    }
+    @media screen and (min-width: 400px) {
+      font-size: 1.8rem;
+    }
+    @media screen and (min-width: 700px) {
+      font-size: 2rem;
+    }
+  }
+  .blogs{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(283px, 1fr));
+    gap: 2rem;
+    @media screen and (min-width: 670px) {
+      grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+    @media screen and (min-width: 1000px) {
+      grid-template-columns: repeat(3, minmax(293px, 1fr));
+    }
+    .blog{
+      background: $--clr-white;
+      border-radius: $--radius;
+      box-shadow: $--light-shadow;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .blog-head{
+        border-bottom: .8px solid $--clr-grey-5;
+        padding: 1rem;
+        h2{
+          margin: 0;
+          font-size: 20px;
+        }
+      }
+      .blog-body{
+        padding: 1rem;
+        border-bottom: .8px solid $--clr-grey-5;
+        font-size: 12px;
+      }
+      .blog-footer{
+        align-items: flex-end;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        .btn-success{
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/*
+===============
+Footer
+===============
+*/
+.footer{
+  margin-top: 1.5rem;
+  background: $--clr-grey-2;
+  text-align: center;
+  padding: .8rem;
+}
+.footer-icons,
+.footer-links{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+
+}
+.footer-link{
+  color: $--clr-white;
+  text-transform: capitalize;
+  font-size: .8rem;
+  margin-right: 1rem;
+  letter-spacing: $--spacing;
+  transition: $--transition;
+  @media screen and (min-width: 600px) {
+    font-size: 1rem;
+  }
+
+}
+.footer-link:hover{
+  color: $--clr-primary-5;
+}
+.footer-icon{
+  font-size: 1.2rem;
+  @media screen and (min-width: 600px) {
+    font-size: 2rem;
+  }
+  margin-right: 1rem;
+  color: $--clr-white;
+  transition: $--transition;
+}
+.footer-icon:hover{
+  color: $--clr-primary-5;
+}
+.copyright{
+  text-transform: uppercase;
+  letter-spacing: $--spacing;
+  color: $--clr-white;
+  font-size: .8rem;
+}
+.copyright .jack,
+.copyright .company{
+  color: $--clr-primary-5;
+}
+@media screen and (min-width: 678px) {
+  .footer{
+    padding: 4rem 2rem 4rem 2rem;
+  }
+  .copyright{
+    font-size: 1rem;
+  }
+}
+
+/*
+===============
+Blog-page
+===============
+*/
+.blog-page{
+  padding: .5rem;
+
+  @media screen and (min-width: 700px) {
+    padding: 3rem 8rem;
+  }
+  .section-blog-page{
+    margin-top: .5rem;
+    .section-title{
+      margin: 0;
+      h2{
+        font-size: 1.5rem;
+        @media screen and (min-width: 600px) {
+          font-size: 2rem;
+        }
+      }
+    }
+    padding: 1rem;
+    @media screen and (min-width: 800px) {
+      padding: 3rem 5rem;
+    }
+    background: $--clr-white;
+    border-radius: $--radius;
+    box-shadow: $--light-shadow;
+    .form-blog{
+      .form-control{
+        margin-top: .5rem;
+
+        label{
+          font-size: 1.2rem;
+          @media screen and (min-width: 600px) {
+            font-size: 2rem;
+          }
+          display: flex;
+          flex-direction: column;
+          span{
+            width: 100%;
+          }
+          .input{
+            padding: .5rem 1.2rem;
+            font-size: 1.1rem;
+            letter-spacing: $--spacing;
+            background: $--clr-primary-10;
+            border: none;
+            border-radius: $--radius;
+            transition: $--transition;
+            @media screen and (min-width: 600px) {
+              font-size: 1.5rem;
+            }
+            &:focus{
+              outline: none;
+              padding-left: 2rem;
+            }
+          }
+
+        }
+
+      }
+      .btn{
+        width: 100%;
+        margin-top: 1rem;
+        padding: .5rem;
+        @media screen and (min-width: 600px) {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
+/*
+===============
+Spinner
+===============
+*/
+.spinner{
+  border: 6px solid rgba(0,0,0,0.1);
+  width: 45px;
+  height: 45px;
+  border-left-color: #09f;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spinner-loading{
+  display: flex;
+  justify-content: center;
+  span{
+    margin-right: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+.alert-danger{
+  span{
+    margin-right: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+.alert-success{
+  span{
+    margin-right: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: green;
+  }
+}
+.request{
+  background: forestgreen;
+  &:hover{
+    background: lightgreen;
+  }
+}
+
+/*
+===============
+Request
+===============
+*/
+.section-requests{
+  .title{
+    h1{
+      font-size: 1.2rem;
+      @media screen and (min-width: 600px) {
+        font-size: 2rem;
+      }
+    }
+    margin: 1rem 0;
+    display: flex; align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+    }
+    width: 100%;
+    .btn-request{
+      background: #0099ff;
+      font-size: .5rem;
+      @media screen and (min-width: 600px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  table{
+    margin: 2rem 0;
+    height: 250px;
+    text-align: center;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: $--dark-shadow;
+    width: 95%;
+    @media screen and (min-width: 600px) {
+      width: 50%;
+    }
+    th{
+      background: $--clr-primary-5;
+      color: $--clr-white;
+      padding: .5rem;
+      @media screen and (min-width: 600px) {
+        padding: 1rem 3rem;
+      }
+    }
+    td{
+      padding: .5rem;
+      background: $--clr-primary-10;
+      @media screen and (min-width: 600px) {
+        padding: 1rem 3rem;
+      }
+    }
+  }
+}
+
+.line-red{
+  border: 1px solid red;
+}
