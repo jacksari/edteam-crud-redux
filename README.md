@@ -62,8 +62,8 @@ Redux funciona con 3 componentes
         * updateBlogAction )> (Actualiza un post, petición PUT)  
       
 ## ¿Era necesario en este proyecto?
-Pienso que nó, se pudo usar Context API de react, ya que con las últimas actualizaciones 
-se hizo más fácil de usarla, pero ¿qué es Context API?; context es una manejador de estados 
+Pienso que no, se pudo usar Context API de react, ya que con las últimas actualizaciones 
+se hizo más fácil de usarla, pero ¿qué es Context API?; context es un manejador de estados 
 y funciones, se sabe que los componentes de react se comunican por los 'props', pero 
 usando context podemos centralizar los estados y las funciones de nuestra aplicación.
 ### Ejemplo
