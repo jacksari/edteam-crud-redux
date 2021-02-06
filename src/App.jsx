@@ -20,8 +20,9 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
-      <Provider store={store}>
+
+    <Provider store={store}>
+      <Router>
         <div>
           <Header />
           {/* A <Switch> looks through its children <Route>s and
@@ -42,9 +43,9 @@ const App = () => {
           </Switch>
           <Footer />
         </div>
-      </Provider>
+      </Router>
+    </Provider>
 
-    </Router>
   );
 };
 
